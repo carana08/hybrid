@@ -1,0 +1,12 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Calendario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label>Selecciona una fecha:</ion-label>
+    <ion-datetime displayFormat="MM/DD/YYYY" [max]="maxDate"></ion-datetime>
+  </ion-item>
+</ion-content>
