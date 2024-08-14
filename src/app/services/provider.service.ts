@@ -1,0 +1,62 @@
+// import { Injectable } from '@angular/core';
+
+//  /* 1. Importe el módulo del HttpClient */
+//  import { HttpClient } from '@angular/common/http';
+
+// @Injectable({
+//   providedIn: 'root'
+// })
+// export class ProviderService {
+//      /* 2.Atributo URL */
+//      private URL: string = 'https://<NOMBRE_DEL_PROYECTO>.firebaseio.com/collection.json';
+
+//      /* 3. Inyección de dependencia del HttpClient */
+//      constructor(private http:HttpClient) { }
+
+//      /* 4. Método con la petición HTTP */
+//      getResponse() {
+//          return this.http.get(this.URL);
+//      }
+
+//      /* 5. Método con la petición HTTP */ 
+//      postResponse(data: any) {
+//          return this.http.post(this.URL, data);
+//      }
+// }
+// src/app/services/provider.service.ts
+import { Injectable } from '@angular/core';
+import { Preferences } from '@capacitor/preferences';
+import { Activity } from '../interfaces/activity';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class ProviderService {
+  private ACTIVITY_STORAGE: string = 'activities';
+  public activities: Activity[] = [];
+
+  constructor() {
+    this.loadActivities();
+  }
+
+  public async loadActivities() {
+    const { value } = await Preferences.get({ key: this.ACTIVITY_STORAGE });
+    this.activities = value ? JSON.parse(value) : [];
+  }
+
+  public async addActivity(activity: Activity) {
+    this.activities.push(activity);
+    await Preferences.set({
+      key: this.ACTIVITY_STORAGE,
+      value: JSON.stringify(this.activities),
+    });
+  }
+
+  public async removeActivity(activityId: string) {
+    this.activities = this.activities.filter(activity => activity.id !== activityId);
+    await Preferences.set({
+      key: this.ACTIVITY_STORAGE,
+      value: JSON.stringify(this.activities),
+    });
+  }
+}

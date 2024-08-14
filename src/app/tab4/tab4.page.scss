@@ -1,0 +1,21 @@
+/* src/app/tab4/tab4.page.scss */
+.half-screen-content {
+    display: flex;
+    flex-direction: column;
+    height: 50vh; /* 50% de la altura de la ventana */
+    overflow-y: auto; /* Permite el desplazamiento si el contenido es mayor que la altura */
+  }
+  
+  .calendar-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .calendar-item ion-datetime {
+    flex: 0 0 25%; /* Ocupa el 25% del espacio */
+  }
+  
+  .Listado {
+    flex: 1; /* Ocupa el resto del espacio */
+    overflow-y: auto; /* Permite el desplazamiento si el contenido es mayor que la altura */
+  }
