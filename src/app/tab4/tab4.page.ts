@@ -65,6 +65,7 @@ export class Tab4Page implements OnInit {
         title: data.title,
         date: data.date,
         completed: false,
+        type: data.type, 
       };
       this.providerService.addActivity(newActivity);
     }

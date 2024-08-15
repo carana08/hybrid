@@ -1,30 +1,32 @@
+<!-- src/app/add-activity-modal/add-activity-modal.component.html -->
 <ion-header>
   <ion-toolbar>
-    <ion-title>Agregar Actividad</ion-title>
+    <ion-title>Añadir Actividad</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="closeModal()">Cancelar</ion-button>
+      <ion-button (click)="closeModal()">Cerrar</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <form (ngSubmit)="submit()">
+  <ion-list>
     <ion-item>
-      <ion-label position="floating">Nombre de la Actividad</ion-label>
-      <ion-input [(ngModel)]="activityTitle" name="title"></ion-input>
+      <ion-label position="floating">Título</ion-label>
+      <ion-input [(ngModel)]="activityTitle"></ion-input>
     </ion-item>
-    
     <ion-item>
-      <ion-label position="floating">Fecha y Hora</ion-label>
-      <ion-datetime [(ngModel)]="activityDate" name="date" displayFormat="MM/DD/YYYY HH:mm"></ion-datetime>
+      <ion-label position="floating">Fecha</ion-label>
+      <ion-datetime [(ngModel)]="activityDate"></ion-datetime>
     </ion-item>
-
-    <ion-footer>
-      <ion-toolbar>
-        <ion-buttons slot="end">
-          <ion-button type="submit">Agregar</ion-button>
-        </ion-buttons>
-      </ion-toolbar>
-    </ion-footer>
-  </form>
+    <ion-item>
+      <ion-label position="floating">Tipo</ion-label>
+      <ion-select [(ngModel)]="activityType">
+        <ion-select-option value="estudio">Estudio</ion-select-option>
+        <ion-select-option value="trabajo">Trabajo</ion-select-option>
+        <ion-select-option value="hogar">Hogar</ion-select-option>
+        <ion-select-option value="ocio">Ocio</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="full" (click)="submit()">Guardar</ion-button>
 </ion-content>

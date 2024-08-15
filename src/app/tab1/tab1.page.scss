@@ -1,3 +1,39 @@
 .completed-activity {
-    color: green;
-  }
+  color: green;
+}
+
+.activity-item {
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.activity-estudio,
+.activity-trabajo,
+.activity-hogar,
+.activity-ocio {
+  --background: none;
+  background-color: inherit; /* Inherit background color to ion-item */
+}
+
+.activity-estudio {
+  background-color: #b3e5fc; /* Celeste */
+}
+
+.activity-trabajo {
+  background-color: #ffcc80; /* Mandarina */
+}
+
+.activity-hogar {
+  background-color: #fff176; /* Girasol */
+}
+
+.activity-ocio {
+  background-color: #e1bee7; /* Lavanda */
+}
+
+.activity-label {
+  flex-grow: 1; /* Ensure the label takes up available space */
+}

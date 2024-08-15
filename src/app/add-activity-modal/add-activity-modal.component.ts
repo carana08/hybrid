@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 //import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonModule, formatDate } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ModalController, IonContent, IonHeader, IonTitle, IonToolbar, IonItem, IonLabel, IonDatetime, IonButton, IonList, IonInput, IonFabButton, IonIcon, IonFab, IonButtons, IonFooter } from '@ionic/angular/standalone';
+import { ModalController,IonSelect, IonSelectOption , IonContent, IonHeader, IonTitle, IonToolbar, IonItem, IonLabel, IonDatetime, IonButton, IonList, IonInput, IonFabButton, IonIcon, IonFab, IonButtons, IonFooter } from '@ionic/angular/standalone';
 import * as moment from 'moment-timezone';
 
 @Component({
@@ -12,12 +12,13 @@ import * as moment from 'moment-timezone';
   standalone: true,
   imports: [IonFooter, IonButtons, IonFab, IonIcon, IonFabButton, 
     IonInput, IonList, IonButton, IonDatetime, IonLabel, IonItem,
-    IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule,
+    IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonSelectOption, IonSelect,
   ]
 })
 export class AddActivityModalComponent implements OnInit {
   activityTitle: string = '';
   activityDate: string = new Date().toISOString(); // Inicializa con la fecha actual
+  activityType: 'estudio' | 'trabajo' | 'hogar' | 'ocio' = 'estudio'; // Inicializa con un tipo por defecto
 
   constructor(private modalController: ModalController) {}
 
@@ -42,6 +43,7 @@ export class AddActivityModalComponent implements OnInit {
     const activity = {
       title: this.activityTitle,
       date: formattedActivityDate,
+      type: this.activityType,
     };
   
     // Envía la actividad con la fecha en formato ISO

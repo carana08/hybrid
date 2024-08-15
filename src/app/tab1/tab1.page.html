@@ -12,8 +12,15 @@
     </ion-toolbar>
   </ion-header>
   <ion-list>
-    <ion-item *ngFor="let activity of pendingActivities">
-      <ion-label>{{ activity.title }} - El {{ activity.date | date: 'dd/MM/yyyy' }} a las {{ activity.date | date: 'HH:mm' }}</ion-label>
+    <ion-item *ngFor="let activity of pendingActivities" [ngClass]="{
+      'activity-estudio': activity.type === 'estudio',
+      'activity-trabajo': activity.type === 'trabajo',
+      'activity-hogar': activity.type === 'hogar',
+      'activity-ocio': activity.type === 'ocio',
+      'activity-item': true
+    }">
+    Tipo de Actividad: {{ activity.type }} <br/>
+      <ion-label> - {{ activity.title }} - El {{ activity.date | date: 'dd/MM/yyyy' }} a las {{ activity.date | date: 'HH:mm' }}</ion-label>
       <ion-button color="success" (click)="confirmComplete(activity.id)">Completado</ion-button>
       <ion-button color="danger" (click)="confirmDelete(activity.id)">Eliminar</ion-button>
     </ion-item>
@@ -25,8 +32,15 @@
         <ion-title size="large">Actividades Completadas</ion-title>
       </ion-toolbar>
     </ion-list-header>
-    <ion-item *ngFor="let activity of completedActivities" class="completed-activity">
+    <ion-item *ngFor="let activity of completedActivities" [ngClass]="{
+      'activity-estudio': activity.type === 'estudio',
+      'activity-trabajo': activity.type === 'trabajo',
+      'activity-hogar': activity.type === 'hogar',
+      'activity-ocio': activity.type === 'ocio',
+      'activity-item': true
+    }" class="completed-activity">
       <ion-label>{{ activity.title }} - El {{ activity.date | date: 'dd/MM/yyyy' }} a las {{ activity.date | date: 'HH:mm' }}</ion-label>
+      <ion-button color="danger" (click)="confirmDelete(activity.id)">Eliminar</ion-button>
     </ion-item>
   </ion-list>
 </ion-content>

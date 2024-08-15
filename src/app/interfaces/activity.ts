@@ -3,4 +3,5 @@ export interface Activity {
   title: string;
   date: string;
   completed: boolean;
+  type: 'estudio' | 'trabajo' | 'hogar' | 'ocio';
 }
