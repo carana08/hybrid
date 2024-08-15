@@ -1,41 +1,4 @@
 <!-- implementación funcional -->
-
-<!-- <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Calendario</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content class="half-screen-content">
-  <ion-item>
-  <ion-label>Selecciona fecha y hora:</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-datetime class="Calendario"
-      displayFormat="MM/DD/YYYY HH:mm"
-      [(ngModel)]="selectedDate"
-      [max]="maxDate">
-    </ion-datetime>
-    <ion-list class="Listado">
-      <ion-input placeholder="Título de la actividad" [(ngModel)]="newActivityTitle"></ion-input>
-      <ion-item *ngFor="let activity of providerService.activities">
-        <ion-label>{{ activity.title }} - {{ activity.date }}</ion-label>
-        <ion-button color="danger" (click)="confirmDelete(activity.id)">Eliminar</ion-button>
-      </ion-item>
-    </ion-list>
-  </ion-item>
-
-
-
-  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-    <ion-fab-button (click)="addActivity()">
-      <ion-icon slot="start" name="add"></ion-icon>
-      +
-    </ion-fab-button>
-  </ion-fab>
-</ion-content> -->
-
-<!-- implementación de prueba -->
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Calendario</ion-title>
