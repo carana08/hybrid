@@ -18,7 +18,7 @@ ion-tab-bar {
   }
   
   /* Media query para dispositivos con 393px de ancho y 851px de alto */
-  @media (max-width: 300px) and (max-height: 851px) {
+  @media (max-width: 301px) {
 
     ion-tab-button {
       font-size: 7px; /* Ajusta el tamaño de la fuente */
@@ -29,7 +29,7 @@ ion-tab-bar {
     }
   }
 
-  @media (max-width: 360px) and (max-height: 851px) {
+  @media (max-width: 361px)  {
 
     ion-tab-button {
       font-size: 7px; /* Ajusta el tamaño de la fuente */
@@ -40,7 +40,7 @@ ion-tab-bar {
     }
   }
 
-  @media (max-width: 390px) and (max-height: 844px) {
+  @media (max-width: 391px) {
 
     ion-tab-button {
       font-size: 7px; /* Ajusta el tamaño de la fuente */
@@ -51,7 +51,7 @@ ion-tab-bar {
     }
   }
 
-  @media (max-width: 412px) and (max-height: 915px) {
+  @media (max-width: 413px){
 
     ion-tab-button {
       font-size: 10px; /* Ajusta el tamaño de la fuente */
@@ -62,7 +62,7 @@ ion-tab-bar {
     }
   }
 
-  @media (max-width: 370px) and (max-height: 780px) {
+  @media (max-width: 371px) {
 
     ion-tab-button {
       font-size: 8px; /* Ajusta el tamaño de la fuente */
@@ -73,7 +73,7 @@ ion-tab-bar {
     }
   }
 
-  @media (max-width: 414px) and (max-height: 896px) {
+  @media (max-width: 415px){
 
     ion-tab-button {
       font-size: 10px; /* Ajusta el tamaño de la fuente */
@@ -85,7 +85,7 @@ ion-tab-bar {
   }
 
   
-  @media (max-width: 428px) and (max-height: 926px) {
+  @media (max-width: 428px){
 
     ion-tab-button {
       font-size: 10px; /* Ajusta el tamaño de la fuente */
