@@ -96,3 +96,14 @@ ion-tab-bar {
     }
   }
   
+    
+  @media (max-width: 394px){
+
+    ion-tab-button {
+      font-size: 10px; /* Ajusta el tamaño de la fuente */
+    }
+  
+    ion-icon {
+      font-size: 15px; /* Ajusta el tamaño del icono */
+    }
+  }
