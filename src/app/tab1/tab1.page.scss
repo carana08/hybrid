@@ -37,3 +37,65 @@
 .activity-label {
   flex-grow: 1; /* Ensure the label takes up available space */
 }
+
+@media (max-width: 391px) {
+  ion-button {
+    font-size: 8px; /* Tamaño de fuente reducido para dispositivos móviles */
+    //padding: 4px 8px; /* Padding reducido para dispositivos móviles */
+  }
+}
+
+  /* Media query para dispositivos con 393px de ancho y 851px de alto */
+  @media (max-width: 300px) and (max-height: 851px) {
+    ion-button {
+      font-size: 8px; /* Tamaño de fuente reducido para dispositivos móviles */
+      //padding: 4px 8px; /* Padding reducido para dispositivos móviles */
+    }
+  }
+
+  @media (max-width: 360px) and (max-height: 851px) {
+    ion-button {
+      font-size: 8px; /* Tamaño de fuente reducido para dispositivos móviles */
+      //padding: 4px 8px; /* Padding reducido para dispositivos móviles */
+    }
+  }
+
+  @media (max-width: 390px) and (max-height: 844px) {
+    ion-button {
+      font-size: 8px; /* Tamaño de fuente reducido para dispositivos móviles */
+      //padding: 4px 8px; /* Padding reducido para dispositivos móviles */
+    }
+  }
+
+  @media (max-width: 412px) and (max-height: 915px) {
+    ion-button {
+      font-size: 8px; /* Tamaño de fuente reducido para dispositivos móviles */
+      //padding: 4px 8px; /* Padding reducido para dispositivos móviles */
+    }
+  }
+
+  @media (max-width: 370px) and (max-height: 780px) {
+    ion-button {
+      font-size: 8px; /* Tamaño de fuente reducido para dispositivos móviles */
+      //padding: 4px 8px; /* Padding reducido para dispositivos móviles */
+    }
+
+  }
+
+  @media (max-width: 414px) and (max-height: 896px) {
+    ion-button {
+      font-size: 8px; /* Tamaño de fuente reducido para dispositivos móviles */
+      //padding: 4px 8px; /* Padding reducido para dispositivos móviles */
+    }
+  }
+
+  
+  @media (max-width: 428px) and (max-height: 926px) {
+
+    ion-button {
+      font-size: 8px; /* Tamaño de fuente reducido para dispositivos móviles */
+      //padding: 4px 8px; /* Padding reducido para dispositivos móviles */
+    }
+  }
+  
+

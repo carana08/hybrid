@@ -19,8 +19,7 @@
       'activity-ocio': activity.type === 'ocio',
       'activity-item': true
     }">
-    Tipo de Actividad: {{ activity.type }} <br/>
-      <ion-label> - {{ activity.title }} - El {{ activity.date | date: 'dd/MM/yyyy' }} a las {{ activity.date | date: 'HH:mm' }}</ion-label>
+      <ion-label>{{ activity.title }} - El {{ activity.date | date: 'dd/MM/yyyy' }} a las {{ activity.date | date: 'HH:mm' }} - Tipo de Actividad: {{ activity.type }} <br/></ion-label>
       <ion-button color="success" (click)="confirmComplete(activity.id)">Completado</ion-button>
       <ion-button color="danger" (click)="confirmDelete(activity.id)">Eliminar</ion-button>
     </ion-item>
