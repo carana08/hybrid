@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Agregar Actividad</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">Cancelar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="submit()">
+    <ion-item>
+      <ion-label position="floating">Nombre de la Actividad</ion-label>
+      <ion-input [(ngModel)]="activityTitle" name="title"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Fecha y Hora</ion-label>
+      <ion-datetime [(ngModel)]="activityDate" name="date" displayFormat="MM/DD/YYYY HH:mm"></ion-datetime>
+    </ion-item>
+
+    <ion-footer>
+      <ion-toolbar>
+        <ion-buttons slot="end">
+          <ion-button type="submit">Agregar</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-footer>
+  </form>
+</ion-content>

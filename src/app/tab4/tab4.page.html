@@ -1,4 +1,6 @@
-<ion-header [translucent]="true">
+<!-- implementación funcional -->
+
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Calendario</ion-title>
   </ion-toolbar>
@@ -23,10 +25,50 @@
     </ion-list>
   </ion-item>
 
- 
+
 
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
     <ion-fab-button (click)="addActivity()">
+      <ion-icon slot="start" name="add"></ion-icon>
+      +
+    </ion-fab-button>
+  </ion-fab>
+</ion-content> -->
+
+<!-- implementación de prueba -->
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Calendario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="half-screen-content">
+  <ion-item>
+  <ion-label>Selecciona fecha:</ion-label>
+  </ion-item>
+
+  <ion-item>
+    
+    <ion-datetime
+      class="Calendario"
+      displayFormat="YYYY-MM-DD"
+      [(ngModel)]="selectedDate"
+      [max]="maxDate"
+    >
+    </ion-datetime>
+    <ion-list class="Listado">
+      <ion-title>Actividades:</ion-title>
+      <ion-item *ngFor="let activity of filteredActivities">
+        <ion-label>{{ activity.title }} - El {{ activity.date | date: 'dd/MM/yyyy' }} a las {{ activity.date | date: 'HH:mm' }}</ion-label>
+        <ion-button color="danger" (click)="confirmDelete(activity.id)"
+          >Eliminar</ion-button
+        >
+      </ion-item>
+    </ion-list>
+  </ion-item>
+
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="openAddActivityModal()">
       <ion-icon slot="start" name="add"></ion-icon>
       +
     </ion-fab-button>
