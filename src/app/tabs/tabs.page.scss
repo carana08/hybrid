@@ -9,7 +9,7 @@ ion-tab-bar {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 12px; /* Tamaño de fuente reducido */
+    font-size: 20px; /* Tamaño de fuente reducido */
     flex: 1; /* Asegura que cada botón ocupe el mismo espacio */
   }
   
@@ -18,9 +18,21 @@ ion-tab-bar {
   }
   
   /* Media query para dispositivos con 393px de ancho y 851px de alto */
-  @media (max-width: 393px) and (max-height: 851px) {
+  @media (max-width: 300px) and (max-height: 851px) {
+
     ion-tab-button {
-      font-size: 10px; /* Ajusta el tamaño de la fuente */
+      font-size: 7px; /* Ajusta el tamaño de la fuente */
+    }
+  
+    ion-icon {
+      font-size: 18px; /* Ajusta el tamaño del icono */
+    }
+  }
+
+  @media (max-width: 360px) and (max-height: 851px) {
+
+    ion-tab-button {
+      font-size: 7px; /* Ajusta el tamaño de la fuente */
     }
   
     ion-icon {
