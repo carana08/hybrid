@@ -2,6 +2,27 @@
   color: green;
 }
 
+  /* legend-modal.component.scss */
+  .legend-button {
+    background-color: #007bff; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 5px 5px; /* Espaciado interno */
+    font-size: 15px; /* Tamaño de la fuente */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+  
+    &:hover {
+      background-color: #0056b3; /* Color de fondo al pasar el cursor */
+    }
+  
+    &:focus {
+      outline: none; /* Sin borde de enfoque */
+      box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Sombra al enfocar */
+    }
+  }
+
 .activity-item {
   padding: 10px;
   border-radius: 5px;
@@ -103,6 +124,25 @@
     ion-button {
       font-size: 8px; /* Tamaño de fuente reducido para dispositivos móviles */
       //padding: 4px 8px; /* Padding reducido para dispositivos móviles */
+    }
+    .legend-button {
+      background-color: #007bff; /* Color de fondo */
+      color: white; /* Color del texto */
+      border: none; /* Sin borde */
+      padding: 5px 5px; /* Espaciado interno */
+      font-size: 7px; /* Tamaño de la fuente */
+      border-radius: 5px; /* Bordes redondeados */
+      cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+      transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+    
+      &:hover {
+        background-color: #0056b3; /* Color de fondo al pasar el cursor */
+      }
+    
+      &:focus {
+        outline: none; /* Sin borde de enfoque */
+        box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Sombra al enfocar */
+      }
     }
   }
 

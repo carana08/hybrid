@@ -20,14 +20,15 @@ import {
   IonButton,
   AlertController,
   IonListHeader,
-} from '@ionic/angular/standalone';
+  ModalController, IonButtons } from '@ionic/angular/standalone';
+import { LegendModalComponent } from '../legend-modal/legend-modal.component';
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
   standalone: true,
-  imports: [
+  imports: [IonButtons, 
     IonListHeader,
     CommonModule,
     IonButton,
@@ -45,6 +46,7 @@ import {
     IonTitle,
     IonContent,
     ExploreContainerComponent,
+    
   ],
 })
 export class Tab1Page implements OnInit {
@@ -53,8 +55,16 @@ export class Tab1Page implements OnInit {
 
   constructor(
     private providerService: ProviderService,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private modalController: ModalController
   ) {}
+
+  async openLegendModal() {
+    const modal = await this.modalController.create({
+      component: LegendModalComponent,
+    });
+    await modal.present();
+  }
 
   get sortedActivities() {
     console.log('Original activities:', this.providerService.activities);
@@ -132,4 +142,6 @@ export class Tab1Page implements OnInit {
       (activity) => activity.completed
     );
   }
+
+  
 }
