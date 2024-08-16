@@ -19,14 +19,15 @@
       >
         <ion-img [src]="photo.webviewPath"></ion-img>
         <p>filepath: {{ photo.filepath }}</p>
+        <ion-button color="danger" (click)="deletePhoto(position)">Eliminar</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
   <!-- 3. Muestra el obtón y habilita el servicio de la cámara -->
-  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+  <!-- <ion-fab vertical="bottom" horizontal="center" slot="fixed">
     <ion-fab-button (click)="addPhotoToGallery()">
       <ion-icon name="camera"></ion-icon>
     </ion-fab-button>
-  </ion-fab>
+  </ion-fab> -->
   <!-- <app-explore-container name="Tab 2 page"></app-explore-container> -->
 </ion-content>

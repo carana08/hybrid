@@ -44,6 +44,7 @@
       'activity-item': true
     }" class="completed-activity">
       <ion-label>{{ activity.title }} - El {{ activity.date | date: 'dd/MM/yyyy' }} a las {{ activity.date | date: 'HH:mm' }}</ion-label>
+      <ion-button (click)="takePhoto(activity.title)">Foto de la Actividad</ion-button>
       <ion-button color="danger" (click)="confirmDelete(activity.id)">Eliminar</ion-button>
     </ion-item>
   </ion-list>

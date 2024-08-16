@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PhotoService } from '../services/photo.service';
 import { ProviderService } from '../services/provider.service';
 import { Activity } from '../interfaces/activity';
 import { CommonModule } from '@angular/common';
@@ -56,8 +57,13 @@ export class Tab1Page implements OnInit {
   constructor(
     private providerService: ProviderService,
     private alertController: AlertController,
-    private modalController: ModalController
+    private modalController: ModalController,
+    private photoService: PhotoService
   ) {}
+
+  async takePhoto(activityName: string) {
+    await this.photoService.addNewToGallery(activityName);
+  }
 
   async openLegendModal() {
     const modal = await this.modalController.create({
@@ -142,6 +148,13 @@ export class Tab1Page implements OnInit {
       (activity) => activity.completed
     );
   }
+
+  // addImage(activity: Activity) {
+  //   const currentDate = new Date().toISOString().split('T')[0];
+  //   const imageName = `${activity.title}-${currentDate}.jpg`;
+  //   this.providerService.addImageToActivity(activity, imageName);
+  //   this.navCtrl.navigateForward('/tabs/tab3');
+  // }
 
   
 }

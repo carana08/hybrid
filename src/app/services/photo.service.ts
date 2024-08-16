@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+//import { Storage } from '@ionic/storage-angular';
 /* 1. Importe los módulos con la funcionalidad nativa */
 import {
   Camera,
@@ -29,7 +30,7 @@ export class PhotoService {
   constructor(platform: Platform) {
     this.platform = platform;
   }
-  public async addNewToGallery() {
+  public async addNewToGallery(activityName: string) {
     /* 4. Tome una foto */
     const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
@@ -37,7 +38,7 @@ export class PhotoService {
       quality: 100,
     });
 
-    const savedImageFile = await this.savePicture(capturedPhoto, 'Actividad realizada el ');
+    const savedImageFile = await this.savePicture(capturedPhoto, "Actividad: " + activityName + "realizada el ");
     this.photos.unshift(savedImageFile);
 
     /* 3. Ruta de almacenamiento */
@@ -147,5 +148,12 @@ export class PhotoService {
     const minutes = String(date.getMinutes()).padStart(2, '0');
   
     return `${year}-${month}-${day} a las ${hours}:${minutes}`;
+  }
+
+  savePhotos() {
+    Preferences.set({
+      key: this.PHOTO_STORAGE,
+      value: JSON.stringify(this.photos),
+    });
   }
 }
