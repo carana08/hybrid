@@ -38,7 +38,7 @@ export class PhotoService {
       quality: 100,
     });
 
-    const savedImageFile = await this.savePicture(capturedPhoto, "Actividad: " + activityName + "realizada el ");
+    const savedImageFile = await this.savePicture(capturedPhoto, activityName);
     this.photos.unshift(savedImageFile);
 
     /* 3. Ruta de almacenamiento */
@@ -59,8 +59,10 @@ export class PhotoService {
 
     const base64Data = await this.readAsBase64(photo);
 
+    const sanitizedPhotoName = photoName.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+
     const formattedDate = this.formatDate(new Date());
-    const fileName = `${photoName}_${formattedDate}.jpeg`;
+     const fileName = `${sanitizedPhotoName}`;
     const savedFile = await Filesystem.writeFile({
       path: fileName,
       data: base64Data,
