@@ -7,3 +7,9 @@
   p#descripcion {
     text-align: justify;
   }
+
+  .img-autores {
+    width: 500px; /* Ajusta el ancho según sea necesario */
+    height: 500px; /* Ajusta la altura según sea necesario */
+    object-fit: cover; /* Asegura que la imagen se ajuste al contenedor sin distorsionarse */
+  }

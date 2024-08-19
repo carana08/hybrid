@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> Pictures </ion-title>
+    <ion-title> Galería </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -18,7 +18,8 @@
         *ngFor="let photo of photoService.photos; index as position"
       >
         <ion-img [src]="photo.webviewPath"></ion-img>
-        <p>filepath: {{ photo.filepath }}</p>
+        <p>Nombre: {{ photo.fileName }}</p>
+        <p>Fecha: {{ photo.date }}</p>
         <ion-button color="danger" (click)="deletePhoto(position)">Eliminar</ion-button>
       </ion-col>
     </ion-row>

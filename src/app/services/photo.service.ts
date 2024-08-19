@@ -72,13 +72,17 @@ export class PhotoService {
       return {
         filepath: savedFile.uri,
         webviewPath: Capacitor.convertFileSrc(savedFile.uri),
+        fileName: fileName,
+        date: formattedDate
       };
     }
     else {
 
       return {
         filepath: fileName,
-        webviewPath: photo.webPath
+        webviewPath: photo.webPath,
+        fileName: fileName,
+        date: formattedDate
       };
 
     }
