@@ -18,7 +18,7 @@
         *ngFor="let photo of photoService.photos; index as position"
       >
         <ion-img [src]="photo.webviewPath"></ion-img>
-        <p>Nombre: {{ photo.fileName }}</p>
+        <p>Actividad: {{ photo.fileName }}</p>
         <p>Fecha: {{ photo.date }}</p>
         <ion-button color="danger" (click)="deletePhoto(position)">Eliminar</ion-button>
       </ion-col>
